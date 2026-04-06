@@ -1,6 +1,9 @@
 # Internal docs (PRD, design specs)
 docs/
 
+# Astro cache
+.astro/
+
 # Logs
 logs
 *.log
