@@ -19,10 +19,13 @@ const {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
+  <link rel="preload" as="image" href="/brand/discussed-logo.svg" type="image/svg+xml" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1f1a18" media="(prefers-color-scheme: dark)" />
   <title>{title}</title>
 </head>
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col antialiased">
   <Header />
   <main class="flex-1">
     <slot />
