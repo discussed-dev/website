@@ -1,12 +1,31 @@
 ---
+const links = [
+  { href: 'https://github.com/discussed-dev/extension', label: 'GitHub' },
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: 'mailto:hi@discussed.dev', label: 'hi@discussed.dev' },
+];
 ---
-<footer class="py-8 border-t border-gray-200 dark:border-gray-800">
-  <div class="max-w-3xl mx-auto px-6 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-    <div class="flex flex-wrap gap-x-6 gap-y-2">
-      <a href="https://github.com/discussed-dev/extension" class="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
-      <a href="/privacy" class="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</a>
-      <a href="mailto:hi@discussed.dev" class="hover:text-gray-900 dark:hover:text-white transition-colors">hi@discussed.dev</a>
+<footer class="pb-10 pt-4 sm:pb-12">
+  <div class="site-shell">
+    <div class="surface-soft rounded-[1rem] px-5 py-6 sm:px-7 sm:py-7">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-xl">
+          <div class="flex items-center gap-3">
+            <img src="/brand/discussed-mark-brand.svg" alt="" class="size-10" />
+            <p class="text-lg font-semibold tracking-[-0.03em] text-[color:var(--page-ink)]">Discussed</p>
+          </div>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--page-ink-soft)]">
+            A browser extension for finding discussion signal without turning your browsing into a bigger workflow. Built to stay compact, legible, and privacy-first.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 text-sm text-[color:var(--page-ink-soft)] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:max-w-md lg:justify-end">
+          {links.map((link) => (
+            <a href={link.href} class="transition-colors hover:text-[color:var(--page-ink)]">{link.label}</a>
+          ))}
+          <span class="text-[color:var(--page-ink-muted)]">MIT License</span>
+        </div>
+      </div>
     </div>
-    <span>MIT License</span>
   </div>
 </footer>
