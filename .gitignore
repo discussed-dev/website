@@ -1,3 +1,6 @@
+# Internal docs (PRD, design specs)
+docs/
+
 # Logs
 logs
 *.log
