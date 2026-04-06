@@ -1,0 +1,37 @@
+---
+const features = [
+  {
+    title: 'Smart auto-detection',
+    description: 'Uses a Bloom filter to detect discussions — zero API calls for most pages.',
+  },
+  {
+    title: 'Multi-platform',
+    description: 'Covers Hacker News, Reddit, and Lobsters, plus search links for X and Google Discussions.',
+  },
+  {
+    title: 'AI-powered summaries',
+    description: 'Summarize cross-thread discussions with one click using your own API key.',
+  },
+  {
+    title: 'Privacy-first',
+    description: 'No data collection, no tracking, no backend. Everything stays in your browser.',
+  },
+  {
+    title: 'Open source',
+    description: 'MIT licensed. Fully transparent. Contributions welcome.',
+  },
+];
+---
+<section class="py-16 sm:py-20 border-t border-gray-100 dark:border-gray-800/50">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-white">Features</h2>
+    <ul class="mt-12 grid gap-8 sm:grid-cols-2">
+      {features.map((feature) => (
+        <li>
+          <h3 class="font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{feature.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
