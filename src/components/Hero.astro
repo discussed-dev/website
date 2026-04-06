@@ -1,26 +1,94 @@
 ---
+const installs = [
+  {
+    action: 'Add to Chrome',
+    store: 'Chrome Web Store',
+    icon: '/store-icons/chrome-web-store.png',
+    href: 'https://github.com/discussed-dev/extension/releases/download/v0.1.0/discussed-0.1.0-chrome.zip',
+  },
+  {
+    action: 'Add to Firefox',
+    store: 'Firefox Add-ons',
+    icon: '/store-icons/firefox-addons.ico',
+    href: 'https://github.com/discussed-dev/extension/releases/download/v0.1.0/discussed-0.1.0-firefox.zip',
+  },
+  {
+    action: 'Add to Edge',
+    store: 'Edge Add-ons',
+    icon: '/store-icons/edge-addons.ico',
+    href: 'https://github.com/discussed-dev/extension/releases/download/v0.1.0/discussed-0.1.0-chrome.zip',
+  },
+];
 ---
-<section class="py-20 sm:py-28">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Discussed
-    </h1>
-    <p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-      See what people are saying about any page on HN, Reddit & Lobsters
-    </p>
-    <div class="mt-10">
-      <a
-        href="https://github.com/discussed-dev/extension"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-hover transition-colors"
-      >
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-        </svg>
-        Star on GitHub
-      </a>
+<section class="pb-12 pt-10 sm:pb-16 sm:pt-14">
+  <div class="site-shell">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,1.1fr)] lg:items-start lg:gap-12">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Discussed browser extension</span>
+
+        <h1 class="mt-6 max-w-3xl text-[clamp(2.6rem,5.4vw,4.4rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-[color:var(--page-ink)]">
+          See what people are saying about any page.
+        </h1>
+
+        <p class="mt-4 text-[1rem] leading-7 text-[color:var(--page-ink-soft)] sm:text-[1.06rem]">
+          HN, Reddit, and Lobsters in one place.
+        </p>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          {installs.map((install) => (
+            <a href={install.href} class="install-card" download>
+              <div class="flex items-center gap-3">
+                <span class="install-icon-wrap">
+                  <img src={install.icon} alt="" class="install-icon" width="32" height="32" loading="eager" decoding="async" />
+                </span>
+                <span class="install-copy">
+                  <strong>{install.action}</strong>
+                  <span>{install.store}</span>
+                </span>
+              </div>
+              <em>v0.1.0</em>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-4 flex flex-wrap items-center gap-3 text-sm text-[color:var(--page-ink-muted)]">
+          <a href="https://github.com/discussed-dev/extension" class="button-secondary">GitHub</a>
+          <a href="/privacy" class="button-ghost">Privacy</a>
+        </div>
+      </div>
+
+      <div class="surface-soft rounded-[0.75rem] p-2 sm:p-2.5 lg:mt-[3.25rem]">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--page-ink-muted)]">In action</p>
+        <div class="mt-3 overflow-hidden rounded-[0.6rem] border border-[var(--page-line)] bg-[color:var(--page-panel-strong)]">
+          <video
+            class="motion-safe-media h-auto w-full"
+            width="1080"
+            height="761"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/media/discussed-extension-poster.png"
+            aria-label="Screen recording of the Discussed extension finding discussions and opening its popup"
+          >
+            <source src="/media/discussed-extension.webm" type="video/webm" />
+            <source src="/media/discussed-extension.mp4" type="video/mp4" />
+          </video>
+          <img
+            src="/media/discussed-extension-poster.png"
+            alt="Screen recording preview of the Discussed extension finding discussions and opening its popup"
+            width="1080"
+            height="761"
+            class="motion-reduce-media h-auto w-full"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <p class="px-1 pt-3 text-sm leading-7 text-[color:var(--page-ink-muted)]">
+          Also available in 7 languages.
+        </p>
+      </div>
     </div>
-    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
-      Coming Soon to Chrome, Firefox & Edge
-    </p>
   </div>
 </section>
