@@ -1,3 +1,4 @@
+@import "@fontsource-variable/ibm-plex-sans";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -12,7 +13,7 @@
 
 :root {
   color-scheme: light;
-  font-family: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "IBM Plex Sans Variable", "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --page-bg: #f3f4f1;
   --page-bg-deep: #eceee9;
   --page-panel: rgba(252, 252, 249, 0.9);

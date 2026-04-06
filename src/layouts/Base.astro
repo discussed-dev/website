@@ -23,6 +23,14 @@ const {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1f1a18" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:image" content={new URL('/brand/discussed-logo.svg', Astro.site).href} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
   <title>{title}</title>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
