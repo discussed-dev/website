@@ -1,5 +1,6 @@
-# Internal docs (PRD, design specs)
+# Internal docs (PRD, design specs, design system)
 docs/
+DESIGN.md
 
 # Astro cache
 .astro/
