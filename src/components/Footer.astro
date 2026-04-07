@@ -5,27 +5,15 @@ const links = [
   { href: 'mailto:hi@discussed.dev', label: 'hi@discussed.dev' },
 ];
 ---
-<footer class="pb-10 pt-4 sm:pb-12">
-  <div class="site-shell">
-    <div class="surface-soft rounded-[1rem] px-5 py-6 sm:px-7 sm:py-7">
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-xl">
-          <div class="flex items-center gap-3">
-            <img src="/brand/discussed-mark-brand.svg" alt="" class="size-10" />
-            <p class="text-lg font-semibold tracking-[-0.03em] text-[color:var(--page-ink)]">Discussed</p>
-          </div>
-          <p class="mt-4 text-sm leading-7 text-[color:var(--page-ink-soft)]">
-            A browser extension for finding discussion signal without turning your browsing into a bigger workflow. Built to stay compact, legible, and privacy-first.
-          </p>
-        </div>
-
-        <div class="flex flex-col gap-4 text-sm text-[color:var(--page-ink-soft)] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:max-w-md lg:justify-end">
-          {links.map((link) => (
-            <a href={link.href} class="transition-colors hover:text-[color:var(--page-ink)]">{link.label}</a>
-          ))}
-          <span class="text-[color:var(--page-ink-muted)]">MIT License</span>
-        </div>
+<footer class="py-10">
+  <div class="shell">
+    <div class="border-t border-[color:var(--border)] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex flex-wrap gap-6 text-[0.85rem] text-[color:var(--text-muted)]">
+        {links.map((link) => (
+          <a href={link.href} class="no-underline transition-colors hover:text-[color:var(--text)]">{link.label}</a>
+        ))}
       </div>
+      <span class="text-[0.8rem] text-[color:var(--text-faint)]">MIT License</span>
     </div>
   </div>
 </footer>

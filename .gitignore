@@ -2,6 +2,11 @@
 docs/
 DESIGN.md
 
+# AI tool configs
+.agents/
+.impeccable.md
+skills-lock.json
+
 # Astro cache
 .astro/
 
