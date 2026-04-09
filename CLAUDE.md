@@ -56,5 +56,6 @@ Key points:
 ## Constraints
 
 - Mobile-friendly, responsive
-- No analytics, no tracking, no dynamic content
+- Analytics via Cloudflare Web Analytics (auto-injected by Cloudflare Pages, no code needed)
+- No third-party tracking, no cookies, no dynamic content
 - Privacy policy must cover: tab URL access, external API calls (HN Algolia, Reddit, Lobsters), local API key storage, Bloom filter from GitHub Releases, AI summarization via user's own LLM provider
