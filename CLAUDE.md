@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Landing page for the **Discussed** browser extension at **discussed.dev**. Single-page static site that explains the extension, links to browser store listings, and hosts a privacy policy (required by Chrome Web Store and Firefox Add-ons).
 
-Currently in **Phase 1** — "coming soon" version with GitHub link as primary CTA, no store links yet.
+Chrome and Firefox store listings are live. Edge store listing still pending (zip download).
 
 ## Tech Stack
 
