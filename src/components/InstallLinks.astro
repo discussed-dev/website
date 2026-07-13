@@ -1,0 +1,34 @@
+---
+import { installLinks } from "../data/install-links";
+
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class:list={["flex flex-wrap gap-3", className]}>
+  {
+    installLinks.map((item) => (
+      <a
+        href={item.href}
+        class:list={[
+          "inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2.5 text-[0.9rem] font-semibold no-underline transition-colors",
+          item.primary
+            ? "bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent-hover)]"
+            : "border border-[color:var(--border)] text-[color:var(--text)] hover:border-[color:var(--text-muted)]",
+        ]}
+      >
+        <img
+          src={item.icon}
+          alt=""
+          width="24"
+          height="24"
+          class="size-6 object-contain"
+        />
+        <span>{item.label}</span>
+      </a>
+    ))
+  }
+</div>

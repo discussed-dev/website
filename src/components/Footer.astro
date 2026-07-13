@@ -1,19 +1,33 @@
 ---
 const links = [
-  { href: 'https://github.com/discussed-dev/extension', label: 'GitHub' },
-  { href: '/privacy', label: 'Privacy Policy' },
-  { href: 'mailto:hi@discussed.dev', label: 'hi@discussed.dev' },
+  { href: "https://github.com/discussed-dev/extension", label: "GitHub" },
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "mailto:hi@discussed.dev", label: "hi@discussed.dev" },
 ];
 ---
+
 <footer class="py-10">
   <div class="shell">
-    <div class="border-t border-[color:var(--border)] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-      <div class="flex flex-wrap gap-6 text-[0.85rem] text-[color:var(--text-muted)]">
-        {links.map((link) => (
-          <a href={link.href} class="no-underline transition-colors hover:text-[color:var(--text)]">{link.label}</a>
-        ))}
+    <div
+      class="border-t border-[color:var(--border)] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <div
+        class="flex flex-wrap gap-6 text-[0.85rem] text-[color:var(--text-muted)]"
+      >
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="no-underline transition-colors hover:text-[color:var(--text)]"
+            >
+              {link.label}
+            </a>
+          ))
+        }
       </div>
-      <span class="text-[0.8rem] text-[color:var(--text-faint)]">MIT License</span>
+      <span class="text-[0.8rem] text-[color:var(--text-muted)]"
+        >MIT License</span
+      >
     </div>
   </div>
 </footer>
