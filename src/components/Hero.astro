@@ -2,44 +2,29 @@
 import InstallLinks from "./InstallLinks.astro";
 ---
 
-<section class="pb-16 pt-8 sm:pb-20 sm:pt-12">
+<section class="pb-12 pt-6 sm:pb-20 sm:pt-12">
   <div class="shell-wide">
     <div
-      class="grid gap-10 lg:grid-cols-[minmax(25rem,0.9fr)_minmax(30rem,1.1fr)] lg:items-center lg:gap-12"
+      class="grid gap-6 sm:gap-10 lg:grid-cols-[minmax(25rem,0.9fr)_minmax(30rem,1.1fr)] lg:items-center lg:gap-12"
     >
       <div>
-        <p class="mb-4 text-[0.85rem] font-semibold text-[color:var(--accent)]">
-          Discussed browser extension
-        </p>
         <h1
-          class="text-balance font-[family-name:var(--font-serif)] text-[clamp(2.8rem,6vw,4rem)] font-normal leading-[1.05] tracking-[-0.02em] text-[color:var(--text)]"
+          class="text-balance font-[family-name:var(--font-serif)] text-[clamp(2.45rem,11vw,4rem)] font-normal leading-[1.05] tracking-[-0.02em] text-[color:var(--text)]"
         >
           Every page has a conversation. Find it.
         </h1>
         <p
-          class="mt-6 text-[1.1rem] leading-[1.7] text-[color:var(--text-muted)]"
+          class="mt-5 text-[1.05rem] leading-[1.65] text-[color:var(--text-muted)] sm:mt-6 sm:text-[1.1rem] sm:leading-[1.7]"
           style="max-width:32rem"
         >
-          See Hacker News, Reddit, and Lobsters threads about the page you're
-          reading. Discussed is open source and works without an account.
+          Find Hacker News, Reddit, and Lobsters threads about the page you're
+          reading. No account required.
         </p>
-        <InstallLinks className="mt-8" />
+        <InstallLinks className="mt-6 sm:mt-8" />
         <p class="mt-3 text-[0.8rem] text-[color:var(--text-muted)]">
           Chrome and Firefox install from their stores. Edge uses a manual 0.3.8
           ZIP install while its store listing is pending.
         </p>
-        <div class="mt-4 flex gap-6 text-[0.85rem]">
-          <a
-            href="https://github.com/discussed-dev/extension"
-            class="text-[color:var(--text-muted)] no-underline border-b border-[color:var(--border)] pb-px transition-colors hover:text-[color:var(--text)]"
-            >Source on GitHub</a
-          >
-          <a
-            href="/privacy"
-            class="text-[color:var(--text-muted)] no-underline border-b border-[color:var(--border)] pb-px transition-colors hover:text-[color:var(--text)]"
-            >Privacy</a
-          >
-        </div>
       </div>
 
       <figure class="m-0">
