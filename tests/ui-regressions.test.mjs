@@ -77,7 +77,9 @@ test("the desktop hero column can contain the display word without overlap", () 
 
   assert.match(hero, /shell-wide/);
   assert.match(hero, /minmax\(25rem,0\.9fr\)/);
-  assert.match(hero, /text-\[clamp\(2\.8rem,6vw,4rem\)\]/);
+  assert.match(hero, /grid gap-6/);
+  assert.match(hero, /text-\[clamp\(2\.45rem,11vw,4rem\)\]/);
+  assert.doesNotMatch(hero, /Source on GitHub/);
   assert.doesNotMatch(hero, /0\.8fr_minmax\(32rem,1\.5fr\)/);
 });
 
