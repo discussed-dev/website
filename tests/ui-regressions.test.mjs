@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 import { join } from "node:path";
 import { URL } from "node:url";
@@ -58,7 +58,7 @@ test("the product demo is user-controlled and does not autoplay as a GIF", () =>
   const hero = read("src/components/Hero.astro");
 
   assert.match(hero, /<video[\s\S]*controls/);
-  assert.match(hero, /discussed-extension-summary-poster\.png/);
+  assert.match(hero, /discussed-extension-summary-poster\.webp/);
   assert.match(hero, /discussed-extension\.webm/);
   assert.match(hero, /discussed-extension\.mp4/);
   assert.doesNotMatch(hero, /discussed-extension\.gif/);
@@ -169,4 +169,23 @@ test("social metadata uses a canonical URL and a large raster product image", ()
   assert.match(base, /property="og:image:height" content="630"/);
   assert.match(base, /name="twitter:card" content="summary_large_image"/);
   assert.match(base, /name="twitter:image"/);
+});
+
+test("the build excludes obsolete media and loads only Latin font subsets", () => {
+  const styles = read("src/styles/global.css");
+
+  assert.equal(
+    existsSync(new URL("public/media/discussed-extension.gif", projectRoot)),
+    false,
+  );
+  assert.equal(
+    existsSync(
+      new URL("public/media/discussed-extension-poster.png", projectRoot),
+    ),
+    false,
+  );
+  assert.match(styles, /fraunces-latin-wght-normal\.woff2/);
+  assert.match(styles, /instrument-sans-latin-wght-normal\.woff2/);
+  assert.doesNotMatch(styles, /latin-ext|vietnamese/);
+  assert.doesNotMatch(styles, /@import "@fontsource-variable/);
 });
