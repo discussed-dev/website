@@ -151,9 +151,12 @@ test("the page provides a skip link and semantic product workflow", () => {
   assert.match(workflow, /<ol/);
   assert.match(workflow, /<li/);
   assert.doesNotMatch(workflow, /sm:grid-cols-3/);
-  assert.match(hero, /<figure/);
-  assert.match(hero, /<figcaption/);
-  assert.match(hero, /11-second silent demo/);
+  assert.match(
+    hero,
+    /aria-label="Discussed finding and summarizing discussions about an article"/,
+  );
+  assert.doesNotMatch(hero, /<figcaption/);
+  assert.doesNotMatch(hero, /11-second silent demo/);
 });
 
 test("the landing page avoids a divider between every section", () => {

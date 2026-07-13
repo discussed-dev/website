@@ -27,7 +27,7 @@ import InstallLinks from "./InstallLinks.astro";
         </p>
       </div>
 
-      <figure class="m-0">
+      <div>
         <div
           class="overflow-hidden rounded-md border border-[color:var(--border)]"
         >
@@ -39,7 +39,6 @@ import InstallLinks from "./InstallLinks.astro";
             preload="metadata"
             poster="/media/discussed-extension-summary-poster.webp"
             aria-label="Discussed finding and summarizing discussions about an article"
-            aria-describedby="demo-caption"
             class="h-auto w-full"
           >
             <source src="/media/discussed-extension.webm" type="video/webm" />
@@ -49,14 +48,7 @@ import InstallLinks from "./InstallLinks.astro";
             >
           </video>
         </div>
-        <figcaption
-          id="demo-caption"
-          class="mt-3 text-[0.8rem] leading-5 text-[color:var(--text-muted)]"
-        >
-          11-second silent demo: open matching threads, then view an optional
-          summary.
-        </figcaption>
-      </figure>
+      </div>
     </div>
   </div>
 </section>
