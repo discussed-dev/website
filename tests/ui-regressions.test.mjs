@@ -43,10 +43,15 @@ function contrastRatio(foreground, background) {
   return (luminances[0] + 0.05) / (luminances[1] + 0.05);
 }
 
-test("install actions identify one primary store and avoid the obsolete Edge package", () => {
+test("install actions slightly prefer both stores without singling one out", () => {
   const installLinks = read("src/data/install-links.ts");
+  const installComponent = read("src/components/InstallLinks.astro");
 
-  assert.equal((installLinks.match(/primary:\s*true/g) ?? []).length, 1);
+  assert.equal((installLinks.match(/preferred:\s*true/g) ?? []).length, 2);
+  assert.equal((installLinks.match(/preferred:\s*false/g) ?? []).length, 1);
+  assert.doesNotMatch(installLinks, /primary:/);
+  assert.match(installComponent, /item\.preferred/);
+  assert.doesNotMatch(installComponent, /bg-\[color:var\(--accent\)\]/);
   assert.match(installLinks, /label:\s*"Add to Chrome"/);
   assert.match(installLinks, /label:\s*"Add to Firefox"/);
   assert.match(installLinks, /label:\s*"Download Edge 0\.3\.8 ZIP"/);
