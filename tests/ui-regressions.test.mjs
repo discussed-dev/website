@@ -58,7 +58,7 @@ test("the product demo is user-controlled and does not autoplay as a GIF", () =>
   const hero = read("src/components/Hero.astro");
 
   assert.match(hero, /<video[\s\S]*controls/);
-  assert.match(hero, /discussed-extension-poster\.png/);
+  assert.match(hero, /discussed-extension-summary-poster\.png/);
   assert.match(hero, /discussed-extension\.webm/);
   assert.match(hero, /discussed-extension\.mp4/);
   assert.doesNotMatch(hero, /discussed-extension\.gif/);
@@ -158,4 +158,15 @@ test("the landing page avoids a divider between every section", () => {
   const index = read("src/pages/index.astro");
 
   assert.ok((index.match(/divider shell/g) ?? []).length <= 1);
+});
+
+test("social metadata uses a canonical URL and a large raster product image", () => {
+  const base = read("src/layouts/Base.astro");
+
+  assert.match(base, /rel="canonical"/);
+  assert.match(base, /discussed-social\.png/);
+  assert.match(base, /property="og:image:width" content="1200"/);
+  assert.match(base, /property="og:image:height" content="630"/);
+  assert.match(base, /name="twitter:card" content="summary_large_image"/);
+  assert.match(base, /name="twitter:image"/);
 });
