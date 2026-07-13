@@ -1,7 +1,3 @@
-# Internal docs (PRD, design specs, design system)
-docs/
-DESIGN.md
-
 # AI tool configs
 .agents/
 .impeccable.md
