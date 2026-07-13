@@ -47,6 +47,9 @@ test("install actions identify one primary store and avoid the obsolete Edge pac
   const installLinks = read("src/data/install-links.ts");
 
   assert.equal((installLinks.match(/primary:\s*true/g) ?? []).length, 1);
+  assert.match(installLinks, /label:\s*"Add to Chrome"/);
+  assert.match(installLinks, /label:\s*"Add to Firefox"/);
+  assert.match(installLinks, /label:\s*"Download Edge 0\.3\.8 ZIP"/);
   assert.match(installLinks, /v0\.3\.8\/discussed-0\.3\.8-chrome\.zip/);
   assert.doesNotMatch(installLinks, /v0\.1\.0/);
 });
@@ -72,7 +75,8 @@ test("the header wordmark inherits the page theme instead of using fixed SVG tex
 test("the desktop hero column can contain the display word without overlap", () => {
   const hero = read("src/components/Hero.astro");
 
-  assert.match(hero, /minmax\(25rem,0\.95fr\)/);
+  assert.match(hero, /shell-wide/);
+  assert.match(hero, /minmax\(25rem,0\.9fr\)/);
   assert.match(hero, /text-\[clamp\(2\.8rem,6vw,4rem\)\]/);
   assert.doesNotMatch(hero, /0\.8fr_minmax\(32rem,1\.5fr\)/);
 });
@@ -133,4 +137,25 @@ test("source avoids common decorative AI-slop patterns", () => {
   assert.doesNotMatch(source, /backdrop-blur|glassmorphism/);
   assert.doesNotMatch(source, /rounded-full/);
   assert.doesNotMatch(source, /[🚀✨🔥⚡🎉]/u);
+});
+
+test("the page provides a skip link and semantic product workflow", () => {
+  const base = read("src/layouts/Base.astro");
+  const workflow = read("src/components/HowItWorks.astro");
+  const hero = read("src/components/Hero.astro");
+
+  assert.match(base, /href="#main-content"/);
+  assert.match(base, /<main[^>]*id="main-content"/);
+  assert.match(workflow, /<ol/);
+  assert.match(workflow, /<li/);
+  assert.doesNotMatch(workflow, /sm:grid-cols-3/);
+  assert.match(hero, /<figure/);
+  assert.match(hero, /<figcaption/);
+  assert.match(hero, /11-second silent demo/);
+});
+
+test("the landing page avoids a divider between every section", () => {
+  const index = read("src/pages/index.astro");
+
+  assert.ok((index.match(/divider shell/g) ?? []).length <= 1);
 });

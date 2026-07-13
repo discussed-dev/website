@@ -2,12 +2,15 @@
 import InstallLinks from "./InstallLinks.astro";
 ---
 
-<section class="py-8 sm:py-12">
-  <div class="shell">
+<section class="pb-16 pt-8 sm:pb-20 sm:pt-12">
+  <div class="shell-wide">
     <div
-      class="grid gap-10 lg:grid-cols-[minmax(25rem,0.95fr)_minmax(28rem,1.05fr)] lg:items-center lg:gap-10"
+      class="grid gap-10 lg:grid-cols-[minmax(25rem,0.9fr)_minmax(30rem,1.1fr)] lg:items-center lg:gap-12"
     >
       <div>
+        <p class="mb-4 text-[0.85rem] font-semibold text-[color:var(--accent)]">
+          Discussed browser extension
+        </p>
         <h1
           class="text-balance font-[family-name:var(--font-serif)] text-[clamp(2.8rem,6vw,4rem)] font-normal leading-[1.05] tracking-[-0.02em] text-[color:var(--text)]"
         >
@@ -22,8 +25,8 @@ import InstallLinks from "./InstallLinks.astro";
         </p>
         <InstallLinks className="mt-8" />
         <p class="mt-3 text-[0.8rem] text-[color:var(--text-muted)]">
-          Chrome and Firefox install from their stores. Edge downloads the 0.3.8
-          release zip.
+          Chrome and Firefox install from their stores. Edge uses a manual 0.3.8
+          ZIP install while its store listing is pending.
         </p>
         <div class="mt-4 flex gap-6 text-[0.85rem]">
           <a
@@ -39,7 +42,7 @@ import InstallLinks from "./InstallLinks.astro";
         </div>
       </div>
 
-      <div>
+      <figure class="m-0">
         <div
           class="overflow-hidden rounded-md border border-[color:var(--border)]"
         >
@@ -51,6 +54,7 @@ import InstallLinks from "./InstallLinks.astro";
             preload="metadata"
             poster="/media/discussed-extension-poster.png"
             aria-label="Discussed finding and summarizing discussions about an article"
+            aria-describedby="demo-caption"
             class="h-auto w-full"
           >
             <source src="/media/discussed-extension.webm" type="video/webm" />
@@ -60,7 +64,14 @@ import InstallLinks from "./InstallLinks.astro";
             >
           </video>
         </div>
-      </div>
+        <figcaption
+          id="demo-caption"
+          class="mt-3 text-[0.8rem] leading-5 text-[color:var(--text-muted)]"
+        >
+          11-second silent demo: open matching threads, then view an optional
+          summary.
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
