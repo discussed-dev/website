@@ -1,24 +1,48 @@
 ---
 const features = [
-  { name: 'Bloom filter detection', desc: 'No API calls unless a match is likely' },
-  { name: 'Three platforms, one popup', desc: 'HN, Reddit, Lobsters. Plus search links for X and Google.' },
-  { name: 'AI summaries', desc: 'Cross-thread digest with your own key' },
-  { name: 'Nothing leaves your browser', desc: 'No backend, no analytics, no accounts' },
-  { name: 'MIT licensed', desc: 'Read the code, fork it, ship it' },
+  {
+    name: "Bloom filter pre-check",
+    desc: "Avoids most network searches when a page has no known thread",
+  },
+  {
+    name: "Three discussion sources",
+    desc: "Hacker News, Reddit, and Lobsters in one popup",
+  },
+  {
+    name: "Optional summaries",
+    desc: "Cross-thread summaries through your chosen LLM provider",
+  },
+  {
+    name: "No Discussed backend",
+    desc: "Requests go directly from your browser to the selected services",
+  },
+  {
+    name: "MIT licensed",
+    desc: "Read the source, report issues, or contribute",
+  },
 ];
 ---
+
 <section class="py-16 sm:py-20">
   <div class="shell">
-    <h2 class="font-[family-name:var(--font-serif)] text-[2rem] font-normal text-[color:var(--text)]">
+    <h2
+      class="font-[family-name:var(--font-serif)] text-[2rem] font-normal text-[color:var(--text)]"
+    >
       Under the hood
     </h2>
     <ul class="mt-8 list-none p-0">
-      {features.map((f) => (
-        <li class="flex flex-col gap-1 border-b border-[color:var(--border)] py-4 first:border-t sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-          <span class="text-[0.95rem] font-semibold text-[color:var(--text)]">{f.name}</span>
-          <span class="text-[0.85rem] text-[color:var(--text-muted)] sm:text-right">{f.desc}</span>
-        </li>
-      ))}
+      {
+        features.map((f) => (
+          <li class="flex flex-col gap-1 border-b border-[color:var(--border)] py-4 first:border-t sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+            <span class="text-[0.95rem] font-semibold text-[color:var(--text)]">
+              {f.name}
+            </span>
+            <span class="text-[0.85rem] text-[color:var(--text-muted)] sm:text-right">
+              {f.desc}
+            </span>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
