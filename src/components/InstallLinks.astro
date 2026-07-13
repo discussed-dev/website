@@ -14,10 +14,10 @@ const { className = "" } = Astro.props;
       <a
         href={item.href}
         class:list={[
-          "inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2.5 text-[0.9rem] font-semibold no-underline transition-colors",
-          item.primary
-            ? "bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent-hover)]"
-            : "border border-[color:var(--border)] text-[color:var(--text)] hover:border-[color:var(--text-muted)]",
+          "inline-flex min-h-11 items-center gap-2 rounded-md border px-4 py-2.5 text-[0.9rem] font-semibold no-underline transition-colors",
+          item.preferred
+            ? "border-[color:var(--text-muted)] text-[color:var(--text)] hover:border-[color:var(--text)]"
+            : "border-[color:var(--border)] text-[color:var(--text-muted)] hover:border-[color:var(--text-muted)] hover:text-[color:var(--text)]",
         ]}
       >
         <img

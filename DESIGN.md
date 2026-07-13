@@ -70,8 +70,9 @@ The off-white background mirrors quiet reading surfaces rather than a yellow pap
 
 ## Installation actions
 
-- Chrome is the single primary action while it is the primary distribution channel.
-- Firefox and Edge remain visually secondary.
+- Chrome and Firefox are slightly preferred because they use verified browser-store installation paths.
+- Edge remains slightly quieter because it requires a manual ZIP installation, but it keeps the same control structure and size.
+- Use outlined actions throughout; stronger border and text contrast distinguish the store links without creating one dominant filled button.
 - Labels describe the action: add to a browser or download a ZIP.
 - Edge copy must disclose the version and manual-install format.
 - Keep controls at least `44px` high and use a modest radius, never a pill.
