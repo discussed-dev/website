@@ -22,7 +22,7 @@ A visitor should be able to:
 
 ## Content structure
 
-1. **Hero:** product name, concrete promise, browser install actions, and a user-controlled product demo.
+1. **Hero:** product name, concrete promise, browser install actions, and a silent looping product demo.
 2. **Workflow:** three steps from browsing to opening threads to requesting a summary.
 3. **Technical detail:** the sources, Bloom-filter pre-check, optional LLM summaries, backend model, and license.
 4. **Final action:** repeat the supported installation paths after the visitor has reviewed the details.
@@ -34,7 +34,8 @@ A visitor should be able to:
 - Generate a static Astro site with no application runtime or account system.
 - Provide live Chrome and Firefox store links.
 - Provide the current verified Edge-compatible ZIP while the Edge store listing is pending.
-- Keep the product demo user-controlled and silent; do not autoplay it.
+- Loop the silent product demo without native player controls.
+- Show the static demo poster instead when the visitor prefers reduced motion.
 - Work at mobile, tablet, and desktop widths without horizontal overflow.
 - Support system light and dark color schemes.
 - Use semantic landmarks, visible keyboard focus, and WCAG AA text contrast.
@@ -56,7 +57,7 @@ The policy must cover:
 - Reproducing the extension interface inside the website
 - Hosting downloads other than links to browser stores or GitHub Releases
 - Adding testimonials, invented usage metrics, pricing, newsletter capture, or decorative marketing sections
-- Adding client-side themes, carousels, parallax, or autoplay motion
+- Adding client-side themes, carousels, parallax, or autoplay motion unrelated to the product demo
 
 ## Done when
 

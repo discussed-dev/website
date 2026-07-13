@@ -59,10 +59,14 @@ test("install actions slightly prefer both stores without singling one out", () 
   assert.doesNotMatch(installLinks, /v0\.1\.0/);
 });
 
-test("the product demo is user-controlled and does not autoplay as a GIF", () => {
+test("the product demo loops without player chrome and respects reduced motion", () => {
   const hero = read("src/components/Hero.astro");
 
-  assert.match(hero, /<video[\s\S]*controls/);
+  assert.match(hero, /<video[\s\S]*autoplay/);
+  assert.match(hero, /<video[\s\S]*muted/);
+  assert.match(hero, /<video[\s\S]*loop/);
+  assert.doesNotMatch(hero, /<video[\s\S]*controls/);
+  assert.match(hero, /media="\(prefers-reduced-motion: no-preference\)"/);
   assert.match(hero, /discussed-extension-summary-poster\.webp/);
   assert.match(hero, /discussed-extension\.webm/);
   assert.match(hero, /discussed-extension\.mp4/);

@@ -15,11 +15,12 @@ Each section has one job and one dominant visual idea. Do not add sections solel
 
 ## Interaction thesis
 
-- Product motion is initiated through the native video controls.
+- The product demo loops silently without native player chrome.
+- Reduced-motion visitors see the static product poster instead of the loop.
 - Links and installation actions use short color transitions to clarify hover state.
 - Keyboard focus is immediate and high-contrast.
 
-Do not add entrance sequences, scroll-linked animation, parallax, autoplay, or decorative motion. This deliberate restraint takes precedence over generic landing-page motion patterns.
+Do not add entrance sequences, scroll-linked animation, parallax, or decorative motion. The product demo is the only autoplay exception because it directly demonstrates the extension.
 
 ## Typography
 
@@ -65,7 +66,7 @@ The off-white background mirrors quiet reading surfaces rather than a yellow pap
 - The product name must be visible in the first viewport.
 - Use one headline, one supporting sentence, one installation group, and one product demo.
 - The demo poster must show Discussed itself, not only the underlying webpage.
-- Keep the video user-controlled and retain native controls.
+- Loop the video silently without native controls so it reads as a product demonstration rather than embedded media.
 - Do not place the hero inside a decorative card, glass panel, gradient, or fake browser frame.
 
 ## Installation actions

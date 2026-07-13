@@ -27,7 +27,7 @@ Target: zero or minimal client-side JavaScript. Static output only.
 ## Architecture
 
 Single-page site with these sections (defined in PRD):
-- Hero with tagline, browser install actions, and a user-controlled product demo
+- Hero with tagline, browser install actions, and a silent looping product demo
 - "How It Works" (3 steps)
 - Features list
 - Final browser install action
@@ -55,7 +55,8 @@ Key points:
 - Brand mark plus a theme-aware HTML wordmark in the header
 - Dark/light mode via system `prefers-color-scheme`
 - Self-host fonts via @fontsource (no Google Fonts)
-- Product motion is user-controlled; no autoplay or decorative animation
+- The product demo loops silently without player chrome; reduced-motion users see its poster
+- No decorative animation
 - Avoid generic AI defaults: gradients, glass panels, pill spam, icon tiles, decorative emoji, and empty marketing copy
 
 ## Constraints
