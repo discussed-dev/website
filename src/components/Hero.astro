@@ -34,15 +34,25 @@ import InstallLinks from "./InstallLinks.astro";
           <video
             width="1080"
             height="762"
-            controls
+            autoplay
+            muted
+            loop
             playsinline
             preload="metadata"
             poster="/media/discussed-extension-summary-poster.webp"
             aria-label="Discussed finding and summarizing discussions about an article"
             class="h-auto w-full"
           >
-            <source src="/media/discussed-extension.webm" type="video/webm" />
-            <source src="/media/discussed-extension.mp4" type="video/mp4" />
+            <source
+              src="/media/discussed-extension.webm"
+              type="video/webm"
+              media="(prefers-reduced-motion: no-preference)"
+            />
+            <source
+              src="/media/discussed-extension.mp4"
+              type="video/mp4"
+              media="(prefers-reduced-motion: no-preference)"
+            />
             <a href="/media/discussed-extension.mp4"
               >Open the product demo video</a
             >
