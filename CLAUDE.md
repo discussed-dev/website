@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Landing page for the **Discussed** browser extension at **discussed.dev**. Single-page static site that explains the extension, links to browser store listings, and hosts a privacy policy (required by Chrome Web Store and Firefox Add-ons).
 
-Chrome and Firefox store listings are live. Edge store listing still pending (zip download).
+Chrome and Firefox store listings are live. Edge store listing still pending; until then the Edge action links to the Chrome Web Store listing, which Edge installs from directly.
 
 ## Tech Stack
 

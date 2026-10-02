@@ -72,10 +72,10 @@ The off-white background mirrors quiet reading surfaces rather than a yellow pap
 ## Installation actions
 
 - Chrome and Firefox are slightly preferred because they use verified browser-store installation paths.
-- Edge remains slightly quieter because it requires a manual ZIP installation, but it keeps the same control structure and size.
+- Edge remains slightly quieter because it installs through the Chrome Web Store until its own listing is live, but it keeps the same control structure and size.
 - Use outlined actions throughout; stronger border and text contrast distinguish the store links without creating one dominant filled button.
-- Labels describe the action: add to a browser or download a ZIP.
-- Edge copy must disclose the version and manual-install format.
+- Labels describe the action: add to a browser.
+- Edge copy must disclose that installation goes through the Chrome Web Store. Do not pin extension versions on the site; they go stale with every release.
 - Keep controls at least `44px` high and use a modest radius, never a pill.
 
 ## Responsive behavior

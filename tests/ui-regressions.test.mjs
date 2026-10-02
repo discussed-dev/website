@@ -54,9 +54,20 @@ test("install actions slightly prefer both stores without singling one out", () 
   assert.doesNotMatch(installComponent, /bg-\[color:var\(--accent\)\]/);
   assert.match(installLinks, /label:\s*"Add to Chrome"/);
   assert.match(installLinks, /label:\s*"Add to Firefox"/);
-  assert.match(installLinks, /label:\s*"Download Edge 0\.3\.8 ZIP"/);
-  assert.match(installLinks, /v0\.3\.8\/discussed-0\.3\.8-chrome\.zip/);
-  assert.doesNotMatch(installLinks, /v0\.1\.0/);
+  assert.match(installLinks, /label:\s*"Add to Edge"/);
+});
+
+test("Edge installs from the Chrome Web Store instead of a pinned ZIP", () => {
+  const installLinks = read("src/data/install-links.ts");
+  const source = readSourceTree();
+  const edgeEntry = installLinks.slice(installLinks.indexOf('"Add to Edge"'));
+
+  assert.match(edgeEntry, /href:\s*chromeWebStore/);
+  assert.match(edgeEntry, /preferred:\s*false/);
+  assert.doesNotMatch(source, /releases\/download|\.zip|\bZIP\b/);
+  assert.doesNotMatch(source, /\d+\.\d+\.\d+ (ZIP|package)/);
+  assert.match(read("src/components/Hero.astro"), /Chrome Web Store/);
+  assert.match(read("src/components/FinalCta.astro"), /Chrome Web Store/);
 });
 
 test("the product demo loops without player chrome and respects reduced motion", () => {
