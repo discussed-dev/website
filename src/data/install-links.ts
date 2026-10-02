@@ -1,15 +1,18 @@
 export interface InstallLink {
-  label: "Add to Chrome" | "Add to Firefox" | "Download Edge 0.3.8 ZIP";
+  label: "Add to Chrome" | "Add to Firefox" | "Add to Edge";
   icon: string;
   href: string;
   preferred: boolean;
 }
 
+const chromeWebStore =
+  "https://chromewebstore.google.com/detail/discussed/hhomlcmeodcgipjpjfiogjokckhibkhm";
+
 export const installLinks = [
   {
     label: "Add to Chrome",
     icon: "/store-icons/chrome-web-store.png",
-    href: "https://chromewebstore.google.com/detail/discussed/hhomlcmeodcgipjpjfiogjokckhibkhm",
+    href: chromeWebStore,
     preferred: true,
   },
   {
@@ -19,9 +22,10 @@ export const installLinks = [
     preferred: true,
   },
   {
-    label: "Download Edge 0.3.8 ZIP",
+    label: "Add to Edge",
     icon: "/store-icons/edge.svg",
-    href: "https://github.com/discussed-dev/extension/releases/download/v0.3.8/discussed-0.3.8-chrome.zip",
+    // Edge installs Chrome Web Store extensions directly; use the Edge Add-ons URL once that listing is live.
+    href: chromeWebStore,
     preferred: false,
   },
 ] satisfies readonly InstallLink[];

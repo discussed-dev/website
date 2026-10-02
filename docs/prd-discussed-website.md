@@ -33,7 +33,7 @@ A visitor should be able to:
 
 - Generate a static Astro site with no application runtime or account system.
 - Provide live Chrome and Firefox store links.
-- Provide the current verified Edge-compatible ZIP while the Edge store listing is pending.
+- Send Edge visitors to the Chrome Web Store listing, which Edge installs from directly, while the Edge store listing is pending.
 - Loop the silent product demo without native player controls.
 - Show the static demo poster instead when the visitor prefers reduced motion.
 - Work at mobile, tablet, and desktop widths without horizontal overflow.
