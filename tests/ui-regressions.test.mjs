@@ -204,6 +204,15 @@ test("the build excludes obsolete media and loads only Latin font subsets", () =
   assert.doesNotMatch(styles, /@import "@fontsource-variable/);
 });
 
+test("unknown URLs get a real 404 page that search engines skip", () => {
+  const base = read("src/layouts/Base.astro");
+  const notFound = read("src/pages/404.astro");
+
+  assert.match(notFound, /<Base[\s\S]*noindex/);
+  assert.match(notFound, /href="\/"/);
+  assert.match(base, /name="robots" content="noindex"/);
+});
+
 test("the brand mark keeps its letterform visible in dark mode", () => {
   for (const file of [
     "public/favicon.svg",
