@@ -33,6 +33,7 @@ Single-page site with these sections (defined in PRD):
 - Final browser install action
 - Footer with GitHub, privacy policy, license
 - Privacy Policy (separate section or `/privacy`)
+- 404 page (`src/pages/404.astro`, so Cloudflare Pages stops serving the home page for unknown URLs)
 
 ## Build Commands
 

@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Page not found — Discussed"
+  description="This page doesn't exist."
+  noindex
+>
+  <section class="py-16 sm:py-20">
+    <div class="shell">
+      <h1
+        class="text-balance font-[family-name:var(--font-serif)] text-[clamp(2.5rem,5vw,4rem)] font-normal leading-[1.05] tracking-[-0.02em] text-[color:var(--text)]"
+        style="max-width:42rem"
+      >
+        Every page has a conversation. Except this one.
+      </h1>
+      <p class="mt-6 text-[1rem] leading-[1.8] text-[color:var(--text-muted)]">
+        This page doesn't exist.
+        <a
+          href="/"
+          class="text-[color:var(--text)] underline underline-offset-4 transition-colors hover:text-[color:var(--accent)]"
+          >Back to the home page</a
+        >
+      </p>
+    </div>
+  </section>
+</Base>
