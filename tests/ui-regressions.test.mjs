@@ -203,3 +203,15 @@ test("the build excludes obsolete media and loads only Latin font subsets", () =
   assert.doesNotMatch(styles, /latin-ext|vietnamese/);
   assert.doesNotMatch(styles, /@import "@fontsource-variable/);
 });
+
+test("the brand mark keeps its letterform visible in dark mode", () => {
+  for (const file of [
+    "public/favicon.svg",
+    "public/brand/discussed-mark-brand.svg",
+  ]) {
+    const mark = read(file);
+
+    assert.match(mark, /prefers-color-scheme:\s*dark/);
+    assert.doesNotMatch(mark, /stroke="#524744"/);
+  }
+});
