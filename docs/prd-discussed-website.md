@@ -24,7 +24,7 @@ A visitor should be able to:
 
 1. **Hero:** product name, concrete promise, browser install actions, and a silent looping product demo.
 2. **Workflow:** three steps from browsing to opening threads to requesting a summary.
-3. **Technical detail:** the sources, Bloom-filter pre-check, optional LLM summaries, backend model, and license.
+3. **Technical detail:** the sources, URL normalization, optional LLM summaries, backend model, and license.
 4. **Final action:** repeat the supported installation paths after the visitor has reviewed the details.
 5. **Footer:** GitHub, privacy policy, contact, and license.
 6. **Privacy page:** accurate description of page URL access, external services, local storage, and user-triggered summaries.
@@ -45,8 +45,8 @@ A visitor should be able to:
 
 The policy must cover:
 
-- Current-tab URL normalization and searches sent directly to Hacker News Algolia, Reddit, and Lobsters
-- The Bloom filter downloaded from GitHub Releases
+- Current-tab URL normalization and automatic searches sent directly to Hacker News Algolia and Reddit (full normalized URL) and Lobsters (domain only)
+- Settings stored in browser sync storage; the API key kept in local storage and never synced
 - Discussion and summary caching in browser storage
 - User-triggered page text and comment access for summarization
 - Local API-key storage and direct requests to the user's configured LLM provider

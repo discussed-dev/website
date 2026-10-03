@@ -273,3 +273,16 @@ test("the two above-the-fold fonts are preloaded from the same files the CSS use
   assert.equal((base.match(/rel="preload"/g) ?? []).length, 2);
   assert.match(base, /as="font"[\s\S]*?crossorigin/);
 });
+
+test("site copy matches extension v0.5: no Bloom filter, accurate data flows", () => {
+  const source = readSourceTree();
+  const privacy = read("src/pages/privacy.astro");
+
+  assert.doesNotMatch(source, /Bloom/i);
+  assert.doesNotMatch(privacy, /GitHub/);
+  assert.match(privacy, /Lobsters receives only the\s+page's domain/);
+  assert.match(privacy, /sync\s+storage/);
+  assert.match(privacy, /never\s+synced/);
+  assert.match(privacy, /tracking\s+parameters/);
+  assert.match(privacy, /Last updated:<\/strong> October 2, 2026/);
+});

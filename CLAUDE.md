@@ -65,4 +65,4 @@ Key points:
 - Mobile-friendly, responsive
 - Analytics via Cloudflare Web Analytics (auto-injected by Cloudflare Pages, no code needed)
 - No third-party tracking, no cookies, no dynamic content
-- Privacy policy must cover: tab URL access, external API calls (HN Algolia, Reddit, Lobsters), local API key storage, Bloom filter from GitHub Releases, AI summarization via user's own LLM provider
+- Privacy policy must cover: tab URL access, external API calls (HN Algolia, Reddit, Lobsters), local API key storage, settings in browser sync storage, AI summarization via user's own LLM provider. It must match the shipped extension: re-check the extension source whenever it changes what it sends or stores
