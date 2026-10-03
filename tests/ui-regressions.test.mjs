@@ -260,3 +260,16 @@ test("only content-hashed build assets are cached as immutable", () => {
   assert.match(headers, /X-Frame-Options: DENY/);
   assert.doesNotMatch(headers, /Content-Security-Policy|Strict-Transport/);
 });
+
+test("the two above-the-fold fonts are preloaded from the same files the CSS uses", () => {
+  const base = read("src/layouts/Base.astro");
+
+  for (const font of [
+    "@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url",
+    "@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url",
+  ]) {
+    assert.ok(base.includes(font), font);
+  }
+  assert.equal((base.match(/rel="preload"/g) ?? []).length, 2);
+  assert.match(base, /as="font"[\s\S]*?crossorigin/);
+});
