@@ -248,3 +248,15 @@ test("hero copy shares the 64rem content edge while the demo uses the wide shell
     /\.hero-copy\s*\{[^}]*padding-inline-start:\s*max\(\s*0px,\s*\(min\(100cqw - 2rem, 72rem\) - 64rem\) \/ 2\s*\)/,
   );
 });
+
+test("only content-hashed build assets are cached as immutable", () => {
+  const headers = read("public/_headers");
+  const rules = headers.split(/\n(?=\S)/).filter((rule) => rule.trim());
+  const immutable = rules.filter((rule) => /immutable/.test(rule));
+
+  assert.equal(immutable.length, 1);
+  assert.match(immutable[0], /^\/_astro\/\*\n/);
+  assert.match(immutable[0], /max-age=31536000/);
+  assert.match(headers, /X-Frame-Options: DENY/);
+  assert.doesNotMatch(headers, /Content-Security-Policy|Strict-Transport/);
+});

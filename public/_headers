@@ -1,0 +1,6 @@
+# Astro build assets have content-hashed names, so they never change in place.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  X-Frame-Options: DENY
