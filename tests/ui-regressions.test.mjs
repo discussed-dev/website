@@ -285,4 +285,6 @@ test("site copy matches extension v0.5: no Bloom filter, accurate data flows", (
   assert.match(privacy, /never\s+synced/);
   assert.match(privacy, /tracking\s+parameters/);
   assert.match(privacy, /Last updated:<\/strong> October 2, 2026/);
+  assert.doesNotMatch(privacy, /removes locally stored\s+settings/);
+  assert.match(privacy, /may remain in\s+your browser account/);
 });
