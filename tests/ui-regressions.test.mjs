@@ -96,7 +96,7 @@ test("the desktop hero column can contain the display word without overlap", () 
   const hero = read("src/components/Hero.astro");
 
   assert.match(hero, /shell-wide/);
-  assert.match(hero, /minmax\(25rem,0\.9fr\)/);
+  assert.match(hero, /minmax\(25rem,0\.95fr\)/);
   assert.match(hero, /grid gap-6/);
   assert.match(hero, /text-\[clamp\(2\.45rem,11vw,4rem\)\]/);
   assert.doesNotMatch(hero, /Source on GitHub/);
@@ -234,4 +234,17 @@ test("the brand mark keeps its letterform visible in dark mode", () => {
     assert.match(mark, /prefers-color-scheme:\s*dark/);
     assert.doesNotMatch(mark, /stroke="#524744"/);
   }
+});
+
+test("hero copy shares the 64rem content edge while the demo uses the wide shell", () => {
+  const hero = read("src/components/Hero.astro");
+  const styles = read("src/styles/global.css");
+
+  assert.match(hero, /<section[^>]*class="[^"]*\bhero\b/);
+  assert.match(hero, /class="[^"]*\bhero-copy\b/);
+  assert.match(styles, /\.hero\s*\{[^}]*container-type:\s*inline-size/);
+  assert.match(
+    styles,
+    /\.hero-copy\s*\{[^}]*padding-inline-start:\s*max\(\s*0px,\s*\(min\(100cqw - 2rem, 72rem\) - 64rem\) \/ 2\s*\)/,
+  );
 });

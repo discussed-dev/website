@@ -123,6 +123,15 @@ img {
   margin-inline: auto;
 }
 
+/* The demo may use the wide shell; the copy keeps the 64rem content edge. */
+.hero {
+  container-type: inline-size;
+}
+
+.hero-copy {
+  padding-inline-start: max(0px, (min(100cqw - 2rem, 72rem) - 64rem) / 2);
+}
+
 .divider {
   border: none;
   border-top: 1px solid var(--border);

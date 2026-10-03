@@ -54,7 +54,7 @@ The off-white background mirrors quiet reading surfaces rather than a yellow pap
 
 ## Layout and rhythm
 
-- The default content shell is `64rem`; product-led media may use a wider shell up to `72rem`.
+- The default content shell is `64rem`; product-led media may use a wider shell up to `72rem`. Text always starts on the `64rem` edge, so in the hero only the demo extends past it.
 - Body copy should remain between `32rem` and `42rem` for comfortable reading.
 - Create hierarchy through width, alignment, whitespace, and type scale.
 - Vary section composition intentionally; do not repeat the same centered heading, equal-column grid, divider, and spacing pattern through the page.
