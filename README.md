@@ -6,7 +6,7 @@ A static [Astro](https://astro.build) site styled with Tailwind CSS v4. It has n
 
 ## Development
 
-Requires Node.js 22.22.3 or newer.
+Requires Node.js 22.22.3 or newer (24.21.0 is pinned in `.node-version`).
 
 ```sh
 npm install
@@ -18,7 +18,7 @@ npm run verify    # format check, lint, type check, tests, production build
 
 ## Deployment
 
-Cloudflare Pages builds and deploys every push to `main`. Response headers live in `public/_headers`.
+Cloudflare Pages runs `npm run verify` on every push to `main` and deploys only if it passes; a failed check leaves the previous deployment live. GitHub Actions runs the same command on pushes and pull requests. Both use the Node version in `.node-version`. Response headers live in `public/_headers`.
 
 ## License
 
