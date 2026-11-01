@@ -308,3 +308,17 @@ test("header and footer link to the changelog", () => {
   assert.match(read("src/components/Header.astro"), /href="\/changelog"/);
   assert.match(read("src/components/Footer.astro"), /href: "\/changelog"/);
 });
+
+test("the landing page answers permission, cost and page-reading questions before the final install action", () => {
+  const index = read("src/pages/index.astro");
+  const faq = read("src/components/Faq.astro");
+
+  assert.ok(index.indexOf("<Faq />") > index.indexOf("<Features />"));
+  assert.ok(index.indexOf("<Faq />") < index.indexOf("<FinalCta />"));
+  assert.match(faq, /<dl/);
+  assert.match(faq, /Allow access/);
+  assert.match(faq, /old\.reddit\.com/);
+  assert.match(faq, /API key/);
+  assert.match(faq, /Summarize/);
+  assert.match(faq, /href="\/privacy"/);
+});

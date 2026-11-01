@@ -31,6 +31,7 @@ Single-page site with these sections (defined in PRD):
 - "How It Works" (3 steps)
 - Features list
 - Final browser install action
+- Questions (Reddit access, summary cost and API key, what Discussed reads)
 - Footer with GitHub, changelog, privacy policy, license
 - Changelog (`/changelog` and `/changelog.xml`), built from the extension repo's `CHANGELOG.md` fetched at build time; a failed fetch fails the build
 - Privacy Policy (separate section or `/privacy`)
