@@ -290,3 +290,21 @@ test("site copy matches extension v0.5: no Bloom filter, accurate data flows", (
   assert.doesNotMatch(privacy, /removes locally stored\s+settings/);
   assert.match(privacy, /may remain in\s+your browser account/);
 });
+
+test("the changelog page and feed are built from the extension's CHANGELOG.md", () => {
+  const config = read("src/content.config.ts");
+  const page = read("src/pages/changelog.astro");
+  const feed = read("src/pages/changelog.xml.ts");
+
+  assert.match(config, /fetchChangelog/);
+  assert.match(page, /getCollection\("releases"\)/);
+  assert.match(page, /id=\{`v\$\{/);
+  assert.match(page, /href="\/changelog\.xml"/);
+  assert.match(feed, /<rss version="2\.0"/);
+  assert.match(feed, /application\/rss\+xml/);
+});
+
+test("header and footer link to the changelog", () => {
+  assert.match(read("src/components/Header.astro"), /href="\/changelog"/);
+  assert.match(read("src/components/Footer.astro"), /href: "\/changelog"/);
+});

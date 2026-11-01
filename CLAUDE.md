@@ -31,7 +31,8 @@ Single-page site with these sections (defined in PRD):
 - "How It Works" (3 steps)
 - Features list
 - Final browser install action
-- Footer with GitHub, privacy policy, license
+- Footer with GitHub, changelog, privacy policy, license
+- Changelog (`/changelog` and `/changelog.xml`), built from the extension repo's `CHANGELOG.md` fetched at build time; a failed fetch fails the build
 - Privacy Policy (separate section or `/privacy`)
 - 404 page (`src/pages/404.astro`, so Cloudflare Pages stops serving the home page for unknown URLs)
 

@@ -1,0 +1,71 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { formatReleaseDate } from "../lib/changelog";
+
+const releases = (await getCollection("releases")).sort((a, b) =>
+  b.data.version.localeCompare(a.data.version, undefined, { numeric: true }),
+);
+const rendered = await Promise.all(
+  releases.map(async (release) => ({ release, ...(await render(release)) })),
+);
+---
+
+<Base
+  title="Changelog — Discussed"
+  description="What changed in each release of the Discussed browser extension."
+>
+  <section class="py-16 sm:py-20">
+    <div class="shell">
+      <h1
+        class="font-[family-name:var(--font-serif)] text-[clamp(2.5rem,5vw,4rem)] font-normal tracking-[-0.02em] text-[color:var(--text)]"
+      >
+        Changelog
+      </h1>
+      <p
+        class="mt-4 text-[1rem] leading-[1.8] text-[color:var(--text-muted)]"
+        style="max-width:36rem"
+      >
+        What changed in each release. Follow new releases with the <a
+          href="/changelog.xml"
+          class="underline underline-offset-[0.18em] transition-colors hover:text-[color:var(--text)]"
+          >RSS feed</a
+        >.
+      </p>
+
+      <div class="mt-12" style="max-width:42rem">
+        {
+          rendered.map(({ release, Content }) => (
+            <article
+              id={`v${release.data.version}`}
+              class="border-t border-[color:var(--border)] py-8"
+            >
+              <h2 class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <a
+                  href={`#v${release.data.version}`}
+                  class="font-[family-name:var(--font-serif)] text-[1.6rem] font-normal text-[color:var(--text)] no-underline"
+                >
+                  {release.data.version}
+                </a>
+                <time
+                  datetime={release.data.date}
+                  class="text-[0.85rem] text-[color:var(--text-muted)]"
+                >
+                  {formatReleaseDate(release.data.date)}
+                </time>
+              </h2>
+              {release.data.summary && (
+                <p class="mt-3 text-[1rem] leading-[1.7] text-[color:var(--text)]">
+                  {release.data.summary}
+                </p>
+              )}
+              <div class="prose prose-sm mt-4 sm:prose-base">
+                <Content />
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

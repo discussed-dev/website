@@ -26,8 +26,9 @@ A visitor should be able to:
 2. **Workflow:** three steps from browsing to opening threads to requesting a summary.
 3. **Technical detail:** the sources, URL normalization, optional LLM summaries, backend model, and license.
 4. **Final action:** repeat the supported installation paths after the visitor has reviewed the details.
-5. **Footer:** GitHub, privacy policy, contact, and license.
-6. **Privacy page:** accurate description of page URL access, external services, local storage, and user-triggered summaries.
+5. **Footer:** GitHub, changelog, privacy policy, contact, and license.
+6. **Changelog page:** every release from the extension repository's `CHANGELOG.md`, fetched at build time, with an RSS feed at `/changelog.xml`.
+7. **Privacy page:** accurate description of page URL access, external services, local storage, and user-triggered summaries.
 
 ## Functional requirements
 
