@@ -1,0 +1,41 @@
+---
+const questions = [
+  {
+    q: "Why does Reddit ask for access?",
+    a: "Reddit stopped answering the search Discussed used, so Discussed now searches old.reddit.com instead. Your browser asks before an extension can reach a new site, so click Allow access in the popup once. If Reddit still refuses a search, Discussed looks the page up in Arctic Shift, a public archive of Reddit posts.",
+  },
+  {
+    q: "Do summaries cost anything?",
+    a: "Discussed is free. Summaries run through an AI provider you choose in settings, with your own API key, and that provider bills you for what you use. A local model through Ollama costs nothing. The key stays in your browser on this device and is sent only to that provider.",
+  },
+  {
+    q: "Does Discussed read the pages I visit?",
+    a: 'It reads the address of the current tab. Before searching, it removes query strings, fragments, and tracking parameters, then sends the address to Hacker News and Reddit and only the domain to Lobsters. It reads the text of a page only when you click Summarize, and sends that text to your AI provider. The <a href="/privacy">privacy policy</a> has the details.',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="shell">
+    <h2
+      class="font-[family-name:var(--font-serif)] text-[2rem] font-normal text-[color:var(--text)]"
+    >
+      Questions
+    </h2>
+    <dl class="mt-8 max-w-[42rem]">
+      {
+        questions.map((item) => (
+          <div class="border-t border-[color:var(--border)] py-6">
+            <dt class="text-[1.05rem] font-semibold text-[color:var(--text)]">
+              {item.q}
+            </dt>
+            <dd
+              class="mt-2 text-[0.95rem] leading-[1.7] text-[color:var(--text-muted)] [&_a]:underline [&_a]:underline-offset-[0.18em] [&_a]:hover:text-[color:var(--text)]"
+              set:html={item.a}
+            />
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
