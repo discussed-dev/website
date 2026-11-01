@@ -22,7 +22,7 @@ import Base from "../layouts/Base.astro";
       </p>
 
       <div class="prose prose-sm mt-10 sm:prose-base" style="max-width:42rem">
-        <p><strong>Last updated:</strong> October 2, 2026</p>
+        <p><strong>Last updated:</strong> November 1, 2026</p>
         <p>
           Discussed finds Hacker News, Reddit, and Lobsters discussions about
           the page you are viewing. It can also summarize those discussions when
@@ -40,6 +40,11 @@ import Base from "../layouts/Base.astro";
           News Algolia API and Reddit. Lobsters receives only the page's domain.
           Each enabled source is queried for every page that is searched; there
           is no local pre-check that skips requests.
+        </p>
+        <p>
+          Reddit searches need access to old.reddit.com, which you grant once
+          from the extension popup. If Reddit refuses or cannot answer a search,
+          the normalized URL is sent to the Arctic Shift Reddit archive instead.
         </p>
 
         <h2>Discussion data</h2>
@@ -73,6 +78,10 @@ import Base from "../layouts/Base.astro";
           <li>
             <a href="https://www.reddit.com/policies/privacy-policy">Reddit</a>
             for Reddit searches
+          </li>
+          <li>
+            <a href="https://arctic-shift.photon-reddit.com/">Arctic Shift</a>
+            for archived Reddit posts when Reddit cannot answer a search
           </li>
           <li>
             <a href="https://lobste.rs/about">Lobsters</a> for Lobsters searches
