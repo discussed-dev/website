@@ -21,5 +21,7 @@ export default [
     languageOptions: {
       parser: typescriptParser,
     },
+    // TypeScript (astro check) resolves globals such as fetch and URL; no-undef cannot see lib types.
+    rules: { "no-undef": "off" },
   },
 ];
