@@ -284,7 +284,7 @@ test("site copy matches extension v0.5: no Bloom filter, accurate data flows", (
   assert.match(privacy, /sync\s+storage/);
   assert.match(privacy, /never\s+synced/);
   assert.match(privacy, /tracking\s+parameters/);
-  assert.match(privacy, /Last updated:<\/strong> November 1, 2026/);
+  assert.match(privacy, /Last updated:<\/strong> November 9, 2026/);
   assert.match(privacy, /Arctic Shift/);
   assert.match(privacy, /old\.reddit\.com/);
   assert.doesNotMatch(privacy, /removes locally stored\s+settings/);
