@@ -67,7 +67,7 @@ The "Under the hood" list is the one place with illustrations: a small abstract 
 
 - One spot per feature row, shown at 128px at every width, inlined from `src/assets/feature-spots/` so the `--il-*` tokens in `global.css` theme it. Never load one through `<img>`; CSS variables do not reach it there.
 - The spots repeat the text beside them, so they are `aria-hidden`.
-- Drawn in the site palette: neutral surfaces, one 0.5 hairline, one soft shadow, no gradient (`--il-panel-top` equals `--il-panel`). The burnt-orange accent marks only a finished result, at most once per spot.
+- Drawn in the site palette: neutral surfaces, one 0.5 hairline, one soft shadow. No gradient fills (`--il-panel-top` equals `--il-panel`); the only gradient-like effect is spotkit's fade mask, which dissolves each spot's lower edge into the page. The burnt-orange accent marks only a finished result, at most once per spot.
 - The glyph that names each idea and any result mark are at least 12 units on the 160 canvas, so they stay legible at 128px. Only the faded "and more" rows may use smaller glyphs.
 - Run `python3 .claude/skills/spotkit/check.py <file>` on every new or changed spot. It misses percentage-sized background rects, which `tests/ui-regressions.test.mjs` catches.
 
