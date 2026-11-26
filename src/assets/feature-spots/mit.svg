@@ -1,0 +1,24 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="il">
+  <defs>
+    <linearGradient id="fadeG-mit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.7" stop-color="#fff"/><stop offset="0.82" stop-color="#000"/>
+    </linearGradient>
+    <mask id="fade-mit"><rect width="160" height="160" fill="url(#fadeG-mit)"/></mask>
+    <linearGradient id="panelG-mit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--il-panel-top, #F0F0ED)"/>
+      <stop offset="1" stop-color="var(--il-panel, #F0F0ED)"/>
+    </linearGradient>
+    <filter id="lift-mit" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.6"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+    <filter id="liftL-mit" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+  </defs>
+  <g mask="url(#fade-mit)">
+<rect x="36" y="16" width="104" height="152" rx="10" fill="var(--il-ghost, #F4F4F1)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><path d="M28 18a10 10 0 0 1 10 -10h84a10 10 0 0 1 10 10V160H28z" fill="url(#panelG-mit)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><rect x="96.0" y="20.0" width="18.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><circle cx="124.0" cy="18.9" r="1.15" fill="var(--il-stroke-soft, #9A9A95)"/><circle cx="124.0" cy="22.5" r="1.15" fill="var(--il-stroke-soft, #9A9A95)"/><circle cx="124.0" cy="26.1" r="1.15" fill="var(--il-stroke-soft, #9A9A95)"/><rect x="28" y="34" width="104" height="0.5" fill="var(--il-line, #BABAB5)" opacity="0.5"/><rect x="40.0" y="45.0" width="38.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="50.0" y="58.0" width="56.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="60.0" y="71.0" width="40.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="60.0" y="84.0" width="50.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="50.0" y="97.0" width="28.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="40.0" y="110.0" width="18.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/>
+  </g>
+<g filter="url(#lift-mit)"><rect x="13.0" y="12.0" width="58.0" height="21.0" rx="8.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><g transform="translate(22.00 17.00) scale(0.04688)" fill="var(--il-stroke, #1A1A1A)"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></g><rect x="39.0" y="20.4" width="24.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><g filter="url(#lift-mit)"><rect x="91.0" y="94.0" width="58.0" height="21.0" rx="8.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><g transform="translate(100.00 99.00) scale(0.04688)" fill="var(--il-stroke-soft, #9A9A95)"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></g><rect x="117.0" y="102.4" width="24.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="il">
+  <defs>
+    <linearGradient id="fadeG-tracking" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.7" stop-color="#fff"/><stop offset="0.82" stop-color="#000"/>
+    </linearGradient>
+    <mask id="fade-tracking"><rect width="160" height="160" fill="url(#fadeG-tracking)"/></mask>
+    <linearGradient id="panelG-tracking" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--il-panel-top, #F0F0ED)"/>
+      <stop offset="1" stop-color="var(--il-panel, #F0F0ED)"/>
+    </linearGradient>
+    <filter id="lift-tracking" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.6"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+    <filter id="liftL-tracking" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+  </defs>
+  <g mask="url(#fade-tracking)">
+<rect x="15" y="34" width="130" height="106" rx="16" fill="var(--il-ghost, #F4F4F1)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><rect x="22" y="30" width="116" height="100" rx="10" fill="url(#panelG-tracking)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><g><rect x="28.0" y="62.0" width="44.0" height="44.0" rx="8.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><rect x="36.0" y="69.0" width="26.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="36.0" y="77.6" width="18.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><g transform="translate(35.00 87.00) scale(0.04688)" fill="var(--il-stroke-soft, #9A9A95)"><path d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"/></g><g><rect x="88.0" y="62.0" width="44.0" height="44.0" rx="8.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><rect x="96.0" y="69.0" width="26.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><rect x="96.0" y="77.6" width="18.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/><g transform="translate(95.00 87.00) scale(0.04688)" fill="var(--il-accent, #C2410C)"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></g><g transform="translate(74.00 78.00) scale(0.04688)" fill="var(--il-stroke-soft, #9A9A95)"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></g><rect x="56.0" y="116.0" width="48.0" height="4.6" rx="2.30" fill="var(--il-fill, #DCDCD8)"/>
+  </g>
+<g><circle cx="80" cy="37" r="17" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><g transform="translate(72.50 29.50) scale(0.05859)" fill="var(--il-stroke, #1A1A1A)"><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"/></g>
+</svg>

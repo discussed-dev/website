@@ -1,0 +1,24 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="il">
+  <defs>
+    <linearGradient id="fadeG-backend" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.7" stop-color="#fff"/><stop offset="0.82" stop-color="#000"/>
+    </linearGradient>
+    <mask id="fade-backend"><rect width="160" height="160" fill="url(#fadeG-backend)"/></mask>
+    <linearGradient id="panelG-backend" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--il-panel-top, #F0F0ED)"/>
+      <stop offset="1" stop-color="var(--il-panel, #F0F0ED)"/>
+    </linearGradient>
+    <filter id="lift-backend" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.6"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+    <filter id="liftL-backend" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5"
+        flood-color="var(--il-shadow-c, #1A1A1A)" flood-opacity="var(--il-shadow-o, 0.12)"/>
+    </filter>
+  </defs>
+  <g mask="url(#fade-backend)">
+<rect x="3" y="18" width="154" height="152" rx="15" fill="var(--il-ghost, #F4F4F1)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><rect x="8" y="13" width="144" height="152" rx="12" fill="var(--il-ghost, #F4F4F1)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><path d="M13 18a10 10 0 0 1 10 -10h114a10 10 0 0 1 10 10V160H13z" fill="url(#panelG-backend)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><circle cx="23.0" cy="17.0" r="1.7" fill="var(--il-line, #BABAB5)"/><circle cx="28.5" cy="17.0" r="1.7" fill="var(--il-line, #BABAB5)"/><circle cx="34.0" cy="17.0" r="1.7" fill="var(--il-line, #BABAB5)"/><rect x="13" y="24" width="134" height="0.5" fill="var(--il-line, #BABAB5)" opacity="0.55"/><g filter="url(#lift-backend)"><rect x="21.0" y="34.0" width="118.0" height="18.0" rx="6.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><rect x="26" y="37" width="12" height="12" rx="4" fill="none" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><circle cx="32.0" cy="43.0" r="2.4" fill="var(--il-fill, #DCDCD8)"/><rect x="44.0" y="40.6" width="22.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><rect x="72.0" y="40.6" width="34.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><g transform="translate(123.00 37.00) scale(0.04688)" fill="var(--il-stroke, #1A1A1A)"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></g><g><rect x="21.0" y="56.0" width="118.0" height="18.0" rx="6.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><rect x="26" y="59" width="12" height="12" rx="4" fill="none" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><circle cx="32.0" cy="65.0" r="2.4" fill="var(--il-fill, #DCDCD8)"/><rect x="44.0" y="62.6" width="22.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><rect x="72.0" y="62.6" width="34.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><g transform="translate(123.00 59.00) scale(0.04688)" fill="var(--il-stroke, #1A1A1A)"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></g><g><rect x="21.0" y="78.0" width="118.0" height="18.0" rx="6.0" fill="var(--il-surface, #FFFFFF)" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/></g><rect x="26" y="81" width="12" height="12" rx="4" fill="none" stroke="var(--il-line, #BABAB5)" stroke-width="0.5"/><circle cx="32.0" cy="87.0" r="2.4" fill="var(--il-fill, #DCDCD8)"/><rect x="44.0" y="84.6" width="22.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><rect x="72.0" y="84.6" width="34.0" height="4.4" rx="2.20" fill="var(--il-fill, #DCDCD8)"/><g transform="translate(123.00 81.00) scale(0.04688)" fill="var(--il-stroke, #1A1A1A)"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></g>
+  </g>
+
+</svg>

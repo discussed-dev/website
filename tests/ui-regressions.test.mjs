@@ -322,3 +322,91 @@ test("the landing page answers permission, cost and page-reading questions befor
   assert.match(faq, /Summarize/);
   assert.match(faq, /href="\/privacy"/);
 });
+
+test("feature spot illustrations are inline, decorative and themed by site tokens", () => {
+  const features = read("src/components/Features.astro");
+  const styles = read("src/styles/global.css");
+  const spots = ["tracking", "sources", "summaries", "backend", "mit"];
+
+  // Inline only: CSS variables do not reach an SVG loaded through <img>.
+  assert.doesNotMatch(features, /<img/);
+
+  for (const name of spots) {
+    assert.match(
+      features,
+      new RegExp(`assets/feature-spots/${name}\\.svg\\?raw`),
+    );
+    const svg = read(`src/assets/feature-spots/${name}.svg`);
+    const root = svg.match(/<svg[^>]*>/)[0];
+
+    assert.match(root, /aria-hidden="true"/, name);
+    assert.match(root, /viewBox="0 0 160 160"/, name);
+    assert.doesNotMatch(root, /\s(width|height)=/, name);
+    assert.doesNotMatch(svg, /<(text|image|foreignObject)\b/, name);
+
+    // Masks and filters cross-apply on one page unless every id is suffixed.
+    const ids = [...svg.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
+    assert.ok(ids.length > 0, name);
+    for (const id of ids) assert.ok(id.endsWith(`-${name}`), `${name}: ${id}`);
+
+    // No background rect, including percentage sizes that spotkit's
+    // check.py lets through (upstream issue #4).
+    const drawn = svg.replace(/<mask[\s\S]*?<\/mask>/g, "");
+    for (const [rect] of drawn.matchAll(/<rect\b[^>]*>/g)) {
+      const attr = (key) => rect.match(new RegExp(`\\s${key}="([^"]*)"`))?.[1];
+      const covers = (value) =>
+        value !== undefined &&
+        (value.endsWith("%") || Number.parseFloat(value) >= 150);
+      const atOrigin = (value) =>
+        value === undefined || Number.parseFloat(value) <= 1;
+      assert.ok(
+        !(
+          atOrigin(attr("x")) &&
+          atOrigin(attr("y")) &&
+          covers(attr("width")) &&
+          covers(attr("height"))
+        ),
+        `${name}: full-canvas rect ${rect}`,
+      );
+    }
+
+    // Every colour themes through a token; only the fade mask's stops are literal.
+    const literals = [
+      ...drawn.matchAll(/(?:fill|stroke|stop-color|flood-color)="(#[^"]+)"/g),
+    ]
+      .map((match) => match[1])
+      .filter((value) => value !== "#fff" && value !== "#000");
+    assert.deepEqual(literals, [], name);
+  }
+
+  // canvas, stroke and accent point at site tokens, so they switch with them.
+  const referenced = { canvas: "--bg", stroke: "--text", accent: "--accent" };
+  const derived = [
+    "ghost",
+    "panel",
+    "panel-top",
+    "line",
+    "surface",
+    "stroke-soft",
+    "fill",
+    "fill-soft",
+    "shadow-c",
+    "shadow-o",
+  ];
+  const darkStart = styles.indexOf("@media (prefers-color-scheme: dark)");
+  const light = styles.slice(0, darkStart);
+  const dark = styles.slice(darkStart);
+  for (const [token, site] of Object.entries(referenced)) {
+    assert.match(light, new RegExp(`--il-${token}:\\s*var\\(${site}\\);`));
+  }
+  for (const block of [light, dark]) {
+    for (const token of derived) {
+      assert.match(block, new RegExp(`--il-${token}:`), token);
+    }
+    // DESIGN.md allows no gradients, so the panel's two stops are one colour.
+    assert.equal(
+      block.match(/--il-panel-top:\s*([^;]+);/)[1],
+      block.match(/--il-panel:\s*([^;]+);/)[1],
+    );
+  }
+});

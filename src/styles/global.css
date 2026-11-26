@@ -37,6 +37,23 @@
   --border: #e5e5e3;
   --font-serif: "Fraunces Variable", Georgia, serif;
   --font-sans: "Instrument Sans Variable", system-ui, sans-serif;
+
+  /* Feature spot illustrations (spotkit tokens). The 0.5 hairline needs a
+     line darker than --border; panel-top equals panel because the design
+     has no gradients. */
+  --il-canvas: var(--bg);
+  --il-ghost: #f4f4f1;
+  --il-panel: #f0f0ed;
+  --il-panel-top: #f0f0ed;
+  --il-line: #babab5;
+  --il-surface: #ffffff;
+  --il-stroke: var(--text);
+  --il-stroke-soft: #9a9a95;
+  --il-fill: #dcdcd8;
+  --il-fill-soft: #e8e8e4;
+  --il-accent: var(--accent);
+  --il-shadow-c: #1a1a1a;
+  --il-shadow-o: 0.12;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +65,17 @@
     --accent: #f06d2d;
     --accent-hover: #f5824c;
     --border: #2a2a2c;
+
+    --il-ghost: #161618;
+    --il-panel: #1c1c1f;
+    --il-panel-top: #1c1c1f;
+    --il-line: #4c4c51;
+    --il-surface: #27272b;
+    --il-stroke-soft: #808085;
+    --il-fill: #3a3a3f;
+    --il-fill-soft: #2e2e33;
+    --il-shadow-c: #000000;
+    --il-shadow-o: 0.5;
   }
 }
 

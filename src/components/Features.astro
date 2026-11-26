@@ -1,24 +1,38 @@
 ---
+// Spot illustrations drawn with the project's spotkit skill. They are inlined
+// so the --il-* tokens in global.css theme them, and hidden from assistive
+// technology because each one repeats the text beside it.
+import tracking from "../assets/feature-spots/tracking.svg?raw";
+import sources from "../assets/feature-spots/sources.svg?raw";
+import summaries from "../assets/feature-spots/summaries.svg?raw";
+import backend from "../assets/feature-spots/backend.svg?raw";
+import mit from "../assets/feature-spots/mit.svg?raw";
+
 const features = [
   {
     name: "Tracking parameters stripped",
     desc: "URLs are cleaned of utm_* and similar tags before any search",
+    spot: tracking,
   },
   {
     name: "Three discussion sources",
     desc: "Hacker News, Reddit, and Lobsters in one popup",
+    spot: sources,
   },
   {
     name: "Optional summaries",
     desc: "Cross-thread summaries through your chosen LLM provider",
+    spot: summaries,
   },
   {
     name: "No Discussed backend",
     desc: "Requests go directly from your browser to the selected services",
+    spot: backend,
   },
   {
     name: "MIT licensed",
     desc: "Read the source, report issues, or contribute",
+    spot: mit,
   },
 ];
 ---
@@ -44,13 +58,19 @@ const features = [
       <ul class="m-0 list-none p-0">
         {
           features.map((f) => (
-            <li class="flex flex-col gap-1 border-b border-[color:var(--border)] py-4 first:border-t sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-              <span class="text-[0.95rem] font-semibold text-[color:var(--text)]">
-                {f.name}
-              </span>
-              <span class="text-[0.85rem] text-[color:var(--text-muted)] sm:text-right">
-                {f.desc}
-              </span>
+            <li class="flex items-center gap-5 border-b border-[color:var(--border)] py-3 first:border-t sm:gap-8">
+              <div
+                class="w-32 shrink-0 [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+                set:html={f.spot}
+              />
+              <div class="flex min-w-0 flex-col gap-1">
+                <span class="text-[0.95rem] font-semibold text-[color:var(--text)]">
+                  {f.name}
+                </span>
+                <span class="text-[0.85rem] text-[color:var(--text-muted)]">
+                  {f.desc}
+                </span>
+              </div>
             </li>
           ))
         }

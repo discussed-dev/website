@@ -53,6 +53,7 @@ Always read `DESIGN.md` before making any visual or UI decisions. All font choic
 
 Key points:
 - Editorial Minimal aesthetic — zero panels/cards, typography does the work
+- One exception: abstract spot illustrations in the feature list, drawn with the project skill `.claude/skills/spotkit` (see DESIGN.md, "Feature illustrations")
 - Fraunces (display) + Instrument Sans (body)
 - Near-monochrome palette with accessible burnt orange `#C2410C` accent
 - Brand mark plus a theme-aware HTML wordmark in the header
